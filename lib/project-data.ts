@@ -270,8 +270,7 @@ export const copy = {
     "Five Oaks is coming to Oakville with single-detached homes and townhomes. Register now so you can review verified pricing, plans and launch details as soon as they are published.",
   mapUnavailable:
     "A project map is not shown because verified Five Oaks coordinates have not been supplied. This placeholder will remain disabled until official project coordinates are confirmed.",
-  privacyNearSubmit:
-    "By submitting this form, you acknowledge the Privacy Policy and understand that your information will be used to respond to your request. Marketing messages are sent only in accordance with the consent choices shown above.",
+  privacyNearSubmit: "Privacy Policy",
 } as const;
 
 export const heroChips = [

@@ -16,7 +16,8 @@ import {
   project,
   userMessages,
 } from "@/lib/project-data";
-import { consentWording, siteConfig } from "@/lib/site-config";
+import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 import { flattenLeadErrors, leadInputSchema } from "@/lib/validation";
 
 interface LeadFormProps {
@@ -393,23 +394,6 @@ export function LeadForm({
           </select>
         </Field>
 
-        <div className="flex items-start gap-3">
-          <input
-            id={`${idPrefix}-marketingConsent`}
-            name="marketingConsent"
-            type="checkbox"
-            checked={values.marketingConsent}
-            onChange={(event) => update("marketingConsent", event.target.checked)}
-            className="mt-1 h-4 w-4 border-stone text-bronze"
-          />
-          <label
-            htmlFor={`${idPrefix}-marketingConsent`}
-            className="text-xs leading-5 text-ink-muted"
-          >
-            {consentWording(siteConfig.publisherLegalName)}
-          </label>
-        </div>
-
         {fieldError("form") ? (
           <p className="text-sm text-error" role="alert">
             {fieldError("form")}
@@ -425,7 +409,9 @@ export function LeadForm({
           {status === "submitting" ? userMessages.loading : project.primaryCta}
         </button>
         <p className="text-center text-xs leading-5 text-ink-muted">
-          {copy.privacyNearSubmit}
+          <Link href="/privacy" className="underline underline-offset-2">
+            Privacy Policy
+          </Link>
         </p>
       </form>
     </div>
